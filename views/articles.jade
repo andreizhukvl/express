@@ -1,0 +1,15 @@
+extends layout
+
+block content
+  header
+    h1 Articles List
+    input(type="submit", value="Add New Article", onclick="window.location.replace('articles/add')")
+  div(id="list")
+  each item in data
+    h1(class="title") #{item.title}
+    img(src="images/" + item.image_path)
+    p(class="description") #{item.description}
+    p(class="content") #{item.body}
+  footer
+    p Created by Andrei)
+
