@@ -1,0 +1,213 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'C:\\Program Files\\nodejs\\node.exe',
+1 verbose cli   'C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js',
+1 verbose cli   'install',
+1 verbose cli   'redux',
+1 verbose cli   'react-redux',
+1 verbose cli   'redux-thunk',
+1 verbose cli   'react-logger',
+1 verbose cli   'redux-logger',
+1 verbose cli   '--save-dev' ]
+2 info using npm@3.10.10
+3 info using node@v7.2.1
+4 silly loadCurrentTree Starting
+5 silly install loadCurrentTree
+6 silly install readLocalPackageData
+7 silly fetchPackageMetaData redux
+8 silly fetchPackageMetaData react-redux
+9 silly fetchPackageMetaData redux-thunk
+10 silly fetchPackageMetaData react-logger
+11 silly fetchPackageMetaData redux-logger
+12 silly fetchNamedPackageData redux
+13 silly mapToRegistry name redux
+14 silly mapToRegistry using default registry
+15 silly mapToRegistry registry https://registry.npmjs.org/
+16 silly mapToRegistry data Result {
+16 silly mapToRegistry   raw: 'redux',
+16 silly mapToRegistry   scope: null,
+16 silly mapToRegistry   escapedName: 'redux',
+16 silly mapToRegistry   name: 'redux',
+16 silly mapToRegistry   rawSpec: '',
+16 silly mapToRegistry   spec: 'latest',
+16 silly mapToRegistry   type: 'tag' }
+17 silly mapToRegistry uri https://registry.npmjs.org/redux
+18 silly fetchNamedPackageData react-redux
+19 silly mapToRegistry name react-redux
+20 silly mapToRegistry using default registry
+21 silly mapToRegistry registry https://registry.npmjs.org/
+22 silly mapToRegistry data Result {
+22 silly mapToRegistry   raw: 'react-redux',
+22 silly mapToRegistry   scope: null,
+22 silly mapToRegistry   escapedName: 'react-redux',
+22 silly mapToRegistry   name: 'react-redux',
+22 silly mapToRegistry   rawSpec: '',
+22 silly mapToRegistry   spec: 'latest',
+22 silly mapToRegistry   type: 'tag' }
+23 silly mapToRegistry uri https://registry.npmjs.org/react-redux
+24 silly fetchNamedPackageData redux-thunk
+25 silly mapToRegistry name redux-thunk
+26 silly mapToRegistry using default registry
+27 silly mapToRegistry registry https://registry.npmjs.org/
+28 silly mapToRegistry data Result {
+28 silly mapToRegistry   raw: 'redux-thunk',
+28 silly mapToRegistry   scope: null,
+28 silly mapToRegistry   escapedName: 'redux-thunk',
+28 silly mapToRegistry   name: 'redux-thunk',
+28 silly mapToRegistry   rawSpec: '',
+28 silly mapToRegistry   spec: 'latest',
+28 silly mapToRegistry   type: 'tag' }
+29 silly mapToRegistry uri https://registry.npmjs.org/redux-thunk
+30 silly fetchNamedPackageData react-logger
+31 silly mapToRegistry name react-logger
+32 silly mapToRegistry using default registry
+33 silly mapToRegistry registry https://registry.npmjs.org/
+34 silly mapToRegistry data Result {
+34 silly mapToRegistry   raw: 'react-logger',
+34 silly mapToRegistry   scope: null,
+34 silly mapToRegistry   escapedName: 'react-logger',
+34 silly mapToRegistry   name: 'react-logger',
+34 silly mapToRegistry   rawSpec: '',
+34 silly mapToRegistry   spec: 'latest',
+34 silly mapToRegistry   type: 'tag' }
+35 silly mapToRegistry uri https://registry.npmjs.org/react-logger
+36 silly fetchNamedPackageData redux-logger
+37 silly mapToRegistry name redux-logger
+38 silly mapToRegistry using default registry
+39 silly mapToRegistry registry https://registry.npmjs.org/
+40 silly mapToRegistry data Result {
+40 silly mapToRegistry   raw: 'redux-logger',
+40 silly mapToRegistry   scope: null,
+40 silly mapToRegistry   escapedName: 'redux-logger',
+40 silly mapToRegistry   name: 'redux-logger',
+40 silly mapToRegistry   rawSpec: '',
+40 silly mapToRegistry   spec: 'latest',
+40 silly mapToRegistry   type: 'tag' }
+41 silly mapToRegistry uri https://registry.npmjs.org/redux-logger
+42 verbose request uri https://registry.npmjs.org/react-logger
+43 verbose request no auth needed
+44 info attempt registry request try #1 at 4:19:47 AM
+45 verbose request id 2c63ba2811870062
+46 http request GET https://registry.npmjs.org/react-logger
+47 verbose request uri https://registry.npmjs.org/redux-thunk
+48 verbose request no auth needed
+49 info attempt registry request try #1 at 4:19:48 AM
+50 verbose etag W/"587f236e-8396"
+51 verbose lastModified Wed, 18 Jan 2017 08:12:30 GMT
+52 http request GET https://registry.npmjs.org/redux-thunk
+53 verbose request uri https://registry.npmjs.org/redux
+54 verbose request no auth needed
+55 info attempt registry request try #1 at 4:19:48 AM
+56 verbose etag W/"58857610-24c85"
+57 verbose lastModified Mon, 23 Jan 2017 03:18:40 GMT
+58 http request GET https://registry.npmjs.org/redux
+59 verbose request uri https://registry.npmjs.org/redux-logger
+60 verbose request no auth needed
+61 info attempt registry request try #1 at 4:19:48 AM
+62 verbose etag W/"585254b1-15fb7"
+63 verbose lastModified Thu, 15 Dec 2016 08:30:41 GMT
+64 http request GET https://registry.npmjs.org/redux-logger
+65 verbose request uri https://registry.npmjs.org/react-redux
+66 verbose request no auth needed
+67 info attempt registry request try #1 at 4:19:48 AM
+68 verbose etag W/"5884c494-2859e"
+69 verbose lastModified Sun, 22 Jan 2017 14:41:24 GMT
+70 http request GET https://registry.npmjs.org/react-redux
+71 info retry will retry, error on last attempt: Error: connect ETIMEDOUT 151.101.36.162:443
+72 info retry will retry, error on last attempt: Error: connect ETIMEDOUT 151.101.36.162:443
+73 info retry will retry, error on last attempt: Error: connect ETIMEDOUT 151.101.36.162:443
+74 info retry will retry, error on last attempt: Error: connect ETIMEDOUT 151.101.36.162:443
+75 info retry will retry, error on last attempt: Error: connect ETIMEDOUT 151.101.36.162:443
+76 info attempt registry request try #2 at 4:20:19 AM
+77 verbose etag W/"58857610-24c85"
+78 verbose lastModified Mon, 23 Jan 2017 03:18:40 GMT
+79 http request GET https://registry.npmjs.org/redux
+80 info attempt registry request try #2 at 4:20:19 AM
+81 verbose etag W/"587f236e-8396"
+82 verbose lastModified Wed, 18 Jan 2017 08:12:30 GMT
+83 http request GET https://registry.npmjs.org/redux-thunk
+84 info attempt registry request try #2 at 4:20:19 AM
+85 verbose etag W/"585254b1-15fb7"
+86 verbose lastModified Thu, 15 Dec 2016 08:30:41 GMT
+87 http request GET https://registry.npmjs.org/redux-logger
+88 info attempt registry request try #2 at 4:20:19 AM
+89 http request GET https://registry.npmjs.org/react-logger
+90 info attempt registry request try #2 at 4:20:19 AM
+91 verbose etag W/"5884c494-2859e"
+92 verbose lastModified Sun, 22 Jan 2017 14:41:24 GMT
+93 http request GET https://registry.npmjs.org/react-redux
+94 info retry will retry, error on last attempt: Error: connect ETIMEDOUT 151.101.36.162:443
+95 info retry will retry, error on last attempt: Error: connect ETIMEDOUT 151.101.36.162:443
+96 info retry will retry, error on last attempt: Error: connect ETIMEDOUT 151.101.36.162:443
+97 info retry will retry, error on last attempt: Error: connect ETIMEDOUT 151.101.36.162:443
+98 info retry will retry, error on last attempt: Error: connect ETIMEDOUT 151.101.36.162:443
+99 info attempt registry request try #3 at 4:21:40 AM
+100 verbose etag W/"5884c494-2859e"
+101 verbose lastModified Sun, 22 Jan 2017 14:41:24 GMT
+102 http request GET https://registry.npmjs.org/react-redux
+103 info attempt registry request try #3 at 4:21:40 AM
+104 verbose etag W/"587f236e-8396"
+105 verbose lastModified Wed, 18 Jan 2017 08:12:30 GMT
+106 http request GET https://registry.npmjs.org/redux-thunk
+107 info attempt registry request try #3 at 4:21:40 AM
+108 verbose etag W/"58857610-24c85"
+109 verbose lastModified Mon, 23 Jan 2017 03:18:40 GMT
+110 http request GET https://registry.npmjs.org/redux
+111 info attempt registry request try #3 at 4:21:40 AM
+112 http request GET https://registry.npmjs.org/react-logger
+113 info attempt registry request try #3 at 4:21:40 AM
+114 verbose etag W/"585254b1-15fb7"
+115 verbose lastModified Thu, 15 Dec 2016 08:30:41 GMT
+116 http request GET https://registry.npmjs.org/redux-logger
+117 silly get cb [ 304, undefined ]
+118 verbose etag https://registry.npmjs.org/redux-thunk from cache
+119 verbose get saving redux-thunk to C:\Users\Andrei_Zhuk\AppData\Roaming\npm-cache\registry.npmjs.org\redux-thunk\.cache.json
+120 verbose correctMkdir C:\Users\Andrei_Zhuk\AppData\Roaming\npm-cache correctMkdir not in flight; initializing
+121 silly get cb [ 304, undefined ]
+122 verbose etag https://registry.npmjs.org/react-redux from cache
+123 verbose get saving react-redux to C:\Users\Andrei_Zhuk\AppData\Roaming\npm-cache\registry.npmjs.org\react-redux\.cache.json
+124 verbose correctMkdir C:\Users\Andrei_Zhuk\AppData\Roaming\npm-cache correctMkdir already in flight; waiting
+125 silly fetchPackageMetaData Error: connect ETIMEDOUT 151.101.36.162:443
+125 silly fetchPackageMetaData     at Object.exports._errnoException (util.js:1022:11)
+125 silly fetchPackageMetaData     at exports._exceptionWithHostPort (util.js:1045:20)
+125 silly fetchPackageMetaData     at TCPConnectWrap.afterConnect [as oncomplete] (net.js:1090:14)
+125 silly fetchPackageMetaData  error for react-logger { Error: connect ETIMEDOUT 151.101.36.162:443
+125 silly fetchPackageMetaData     at Object.exports._errnoException (util.js:1022:11)
+125 silly fetchPackageMetaData     at exports._exceptionWithHostPort (util.js:1045:20)
+125 silly fetchPackageMetaData     at TCPConnectWrap.afterConnect [as oncomplete] (net.js:1090:14)
+125 silly fetchPackageMetaData   code: 'ETIMEDOUT',
+125 silly fetchPackageMetaData   errno: 'ETIMEDOUT',
+125 silly fetchPackageMetaData   syscall: 'connect',
+125 silly fetchPackageMetaData   address: '151.101.36.162',
+125 silly fetchPackageMetaData   port: 443 }
+126 silly get cb [ 304, undefined ]
+127 verbose etag https://registry.npmjs.org/redux-logger from cache
+128 verbose get saving redux-logger to C:\Users\Andrei_Zhuk\AppData\Roaming\npm-cache\registry.npmjs.org\redux-logger\.cache.json
+129 verbose correctMkdir C:\Users\Andrei_Zhuk\AppData\Roaming\npm-cache correctMkdir already in flight; waiting
+130 silly get cb [ 304, undefined ]
+131 verbose etag https://registry.npmjs.org/redux from cache
+132 verbose get saving redux to C:\Users\Andrei_Zhuk\AppData\Roaming\npm-cache\registry.npmjs.org\redux\.cache.json
+133 verbose correctMkdir C:\Users\Andrei_Zhuk\AppData\Roaming\npm-cache correctMkdir already in flight; waiting
+134 silly rollbackFailedOptional Starting
+135 silly rollbackFailedOptional Finishing
+136 silly runTopLevelLifecycles Finishing
+137 silly install printInstalled
+138 verbose stack Error: connect ETIMEDOUT 151.101.36.162:443
+138 verbose stack     at Object.exports._errnoException (util.js:1022:11)
+138 verbose stack     at exports._exceptionWithHostPort (util.js:1045:20)
+138 verbose stack     at TCPConnectWrap.afterConnect [as oncomplete] (net.js:1090:14)
+139 verbose cwd D:\frontcamp\express\express
+140 error Windows_NT 10.0.14393
+141 error argv "C:\\Program Files\\nodejs\\node.exe" "C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "install" "redux" "react-redux" "redux-thunk" "react-logger" "redux-logger" "--save-dev"
+142 error node v7.2.1
+143 error npm  v3.10.10
+144 error code ETIMEDOUT
+145 error errno ETIMEDOUT
+146 error syscall connect
+147 error network connect ETIMEDOUT 151.101.36.162:443
+148 error network This is most likely not a problem with npm itself
+148 error network and is related to network connectivity.
+148 error network In most cases you are behind a proxy or have bad network settings.
+148 error network
+148 error network If you are behind a proxy, please make sure that the
+148 error network 'proxy' config is set properly.  See: 'npm help config'
+149 verbose exit [ 1, true ]

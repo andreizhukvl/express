@@ -33,7 +33,7 @@ router.get('/', function(req, res, next) {
   var db = mongoose.connect('mongodb://admin:admin@ds033066.mlab.com:33066/blog');
 
   Article.find({}, function(err, docs) {
-    res.render('articles', { data: docs });
+    res.sendfile('./public/index.html');
     db.disconnect();
   });
 });
