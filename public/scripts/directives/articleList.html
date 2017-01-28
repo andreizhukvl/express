@@ -1,0 +1,9 @@
+<form novalidate ng-controller="submitArticleCtrl as submitCtrl" name="sumitFORM" enter-key="submitCtrl.onSubmit()">
+  <input type="text" name="title" ng-model="submitCtrl.title" ng-required="true">
+  <span ng-if="sumitFORM.title.$invalid">title IS REQUIRED</span>
+  <input type="text" name="description" ng-model="submitCtrl.description" ng-required="true">
+  <input type="submit" ng-click="submitCtrl.onSubmit()">
+</form>
+<div ng-repeat="article in $ctrl.articles">
+    <article-details article-item='article'></article-details>
+</div>

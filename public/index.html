@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>My HTML File</title>
+    <script src="scripts/angular/angular.js"></script>
+    <script src="scripts/angular/angular-route.js"></script>
+    <script src="scripts/app.js"></script>
+    <script src="scripts/directives/articleList.js"></script>
+    <script src="scripts/directives/articleDetails.js"></script>
+    <script src="scripts/services/articlesSvc.js"></script>
+    <script src="scripts/controllers/submitArticleCtrl.js"></script>
+    <script src="scripts/filters/postTextFilter.js"></script>
+    <script src="scripts/config/appConfig.js"></script>
+    <script src="scripts/directives/enterKey.js"></script>
+  </head>
+  <body ng-app='articlesApp'>
+
+    <div ng-view></div>
+    <p>Nothing here {{'yet' + '!'}}</p>
+
+  </body>
+</html>
