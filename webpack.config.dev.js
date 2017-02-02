@@ -1,8 +1,8 @@
 module.exports = {
-    entry: "./public/javascripts/react_test.js",
+    entry: "./scripts/news/app.js",
     output: {
         path: __dirname,
-        filename: "./public/javascripts/bundle.js"
+        filename: "./public/javascripts/news/bundle.js"
     },
     module: {
         loaders: [

@@ -21630,8 +21630,6 @@
 	
 	var API_KEY = 'd1450e81d3cb4c4ba3f2f5c772206b14';
 	var API_ARTICLE_BASE_URL = 'https://newsapi.org/v1/articles?source=';
-	//import logo from './logo.svg';
-	//import './Source.css';
 	
 	var Sources = function (_Component) {
 	  _inherits(Sources, _Component);
@@ -21648,11 +21646,17 @@
 	        item.name
 	      );
 	    });
-	    _this.state = {
+	
+	    var stateInstance = {
 	      selectedItem: null,
 	      articles: []
 	    };
 	
+	    if (props.items.length) {
+	      stateInstance.selectedItem = props.items[0].id;
+	    }
+	
+	    _this.state = stateInstance;
 	    _this.handleChange = _this.handleChange.bind(_this);
 	    _this.handleClick = _this.handleClick.bind(_this);
 	    return _this;
@@ -21668,7 +21672,7 @@
 	        null,
 	        _react2.default.createElement(
 	          'select',
-	          { id: 'sources', onChange: this.handleChange },
+	          { value: this.state.selectedItem, id: 'sources', onChange: this.handleChange },
 	          this.listItems
 	        ),
 	        _react2.default.createElement(
@@ -21712,6 +21716,63 @@
 /* 180 */
 /***/ function(module, exports, __webpack_require__) {
 
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	
+	var _react = __webpack_require__(1);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	var _Article = __webpack_require__(181);
+	
+	var _Article2 = _interopRequireDefault(_Article);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	
+	var ArticleList = function (_Component) {
+	  _inherits(ArticleList, _Component);
+	
+	  function ArticleList() {
+	    _classCallCheck(this, ArticleList);
+	
+	    return _possibleConstructorReturn(this, (ArticleList.__proto__ || Object.getPrototypeOf(ArticleList)).apply(this, arguments));
+	  }
+	
+	  _createClass(ArticleList, [{
+	    key: 'render',
+	    value: function render() {
+	      var listItems = this.props.articles.map(function (item, index) {
+	        return _react2.default.createElement(_Article2.default, { key: index, value: item });
+	      });
+	
+	      return _react2.default.createElement(
+	        'div',
+	        null,
+	        listItems
+	      );
+	    }
+	  }]);
+	
+	  return ArticleList;
+	}(_react.Component);
+	
+	exports.default = ArticleList;
+
+/***/ },
+/* 181 */
+/***/ function(module, exports, __webpack_require__) {
+
 	"use strict";
 	
 	Object.defineProperty(exports, "__esModule", {
@@ -21731,9 +21792,6 @@
 	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 	
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-	
-	//import logo from './logo.svg';
-	//import './Source.css';
 	
 	var Article = function (_React$Component) {
 	  _inherits(Article, _React$Component);
@@ -21787,50 +21845,7 @@
 	  return Article;
 	}(_react2.default.Component);
 	
-	var ArticleList = function (_Component) {
-	  _inherits(ArticleList, _Component);
-	
-	  function ArticleList(props) {
-	    _classCallCheck(this, ArticleList);
-	
-	    return _possibleConstructorReturn(this, (ArticleList.__proto__ || Object.getPrototypeOf(ArticleList)).call(this, props));
-	
-	    // this.articles = props.articles.map((article) =>
-	    //   // Correct! Key should be specified inside the array.
-	    //   <Article key={article.toString()} value={article}>
-	    //   </Article>
-	    // <h1 class="title">${article.title}</h1>
-	    //        <img src="${article.urlToImage}"></img>
-	    //        <p class="description">${article.description}</p>
-	    //        <p class="link_to_article"><a href="${article.url}">Read full article</a></p>
-	    //        <p class="author">By ${article.author} on (${new Date(article.publishedAt).toLocaleString()})</p>
-	    // );
-	  }
-	
-	  _createClass(ArticleList, [{
-	    key: "componentWillReceiveProps",
-	    value: function componentWillReceiveProps(nextProps) {
-	      debugger;
-	    }
-	  }, {
-	    key: "render",
-	    value: function render() {
-	      var listItems = this.props.articles.map(function (item, index) {
-	        return _react2.default.createElement(Article, { key: index, value: item });
-	      });
-	
-	      return _react2.default.createElement(
-	        "div",
-	        null,
-	        listItems
-	      );
-	    }
-	  }]);
-	
-	  return ArticleList;
-	}(_react.Component);
-	
-	exports.default = ArticleList;
+	exports.default = Article;
 
 /***/ }
 /******/ ]);
