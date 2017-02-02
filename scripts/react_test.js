@@ -1,6 +1,4 @@
-import SourcesHelper from './sourcesHelper'
+import Sources from './sourcesHelper';
 
-window.onload = () => {
-  let sourcesHelper = new SourcesHelper();
-  sourcesHelper.load();
-};
+var ss = new Sources();
+ss.load();

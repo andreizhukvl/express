@@ -46,16 +46,29 @@
 
 	'use strict';
 	
-	var _sourcesHelper = __webpack_require__(182);
+	var _react = __webpack_require__(1);
 	
-	var _sourcesHelper2 = _interopRequireDefault(_sourcesHelper);
+	var _react2 = _interopRequireDefault(_react);
+	
+	var _reactDom = __webpack_require__(32);
+	
+	var _reactDom2 = _interopRequireDefault(_reactDom);
+	
+	var _Sources = __webpack_require__(179);
+	
+	var _Sources2 = _interopRequireDefault(_Sources);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
-	window.onload = function () {
-	  var sourcesHelper = new _sourcesHelper2.default();
-	  sourcesHelper.load();
-	};
+	var API_URL = 'https://newsapi.org/v1/sources?apiKey=d1450e81d3cb4c4ba3f2f5c772206b14';
+	
+	fetch(API_URL).then(function (result) {
+	    if (result.ok) {
+	        return result.json();
+	    }
+	}).then(function (data) {
+	    _reactDom2.default.render(_react2.default.createElement(_Sources2.default, { items: data.sources }), document.getElementById('feed'));
+	}).catch(function () {});
 
 /***/ },
 /* 1 */
@@ -21588,11 +21601,120 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
 
 /***/ },
-/* 179 */,
-/* 180 */
+/* 179 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	
+	var _react = __webpack_require__(1);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	var _ArticleList = __webpack_require__(180);
+	
+	var _ArticleList2 = _interopRequireDefault(_ArticleList);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	
+	var API_KEY = 'd1450e81d3cb4c4ba3f2f5c772206b14';
+	var API_ARTICLE_BASE_URL = 'https://newsapi.org/v1/articles?source=';
+	//import logo from './logo.svg';
+	//import './Source.css';
+	
+	var Sources = function (_Component) {
+	  _inherits(Sources, _Component);
+	
+	  function Sources(props) {
+	    _classCallCheck(this, Sources);
+	
+	    var _this = _possibleConstructorReturn(this, (Sources.__proto__ || Object.getPrototypeOf(Sources)).call(this, props));
+	
+	    _this.listItems = props.items.map(function (item) {
+	      return _react2.default.createElement(
+	        'option',
+	        { key: item.id, value: item.id },
+	        item.name
+	      );
+	    });
+	    _this.state = {
+	      selectedItem: null,
+	      articles: [{ title: "ggg" }, { title: "asdasd" }, { title: "addddsdasd" }]
+	    };
+	
+	    _this.handleChange = _this.handleChange.bind(_this);
+	    _this.handleClick = _this.handleClick.bind(_this);
+	    return _this;
+	  }
+	
+	  _createClass(Sources, [{
+	    key: 'render',
+	    value: function render() {
+	      var _this2 = this;
+	
+	      return _react2.default.createElement(
+	        'div',
+	        null,
+	        _react2.default.createElement(
+	          'select',
+	          { id: 'sources', onChange: this.handleChange },
+	          this.listItems
+	        ),
+	        _react2.default.createElement(
+	          'button',
+	          { id: 'magic_button', onClick: function onClick() {
+	              return _this2.handleClick();
+	            } },
+	          'Show selected news.'
+	        ),
+	        _react2.default.createElement(_ArticleList2.default, { articles: this.state.articles })
+	      );
+	    }
+	  }, {
+	    key: 'handleChange',
+	    value: function handleChange(event) {
+	      this.setState({ selectedItem: event.target.value });
+	    }
+	  }, {
+	    key: 'handleClick',
+	    value: function handleClick() {
+	      var selectedItem = this.state.selectedItem;
+	      var self = this;
+	      fetch(API_ARTICLE_BASE_URL + selectedItem + "&apiKey=" + API_KEY).then(function (result) {
+	        if (result.ok) {
+	          return result.json();
+	        }
+	      }).then(function (data) {
+	        self.setState({
+	          articles: data.articles
+	        });
+	      });
+	
+	      alert('Your selected article is: ' + this.state.selectedItem);
+	    }
+	  }]);
+	
+	  return Sources;
+	}(_react.Component);
+	
+	exports.default = Sources;
+
+/***/ },
+/* 180 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
 	
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
@@ -21615,103 +21737,104 @@
 	//import logo from './logo.svg';
 	//import './Source.css';
 	
-	var Sources = function (_Component) {
-	  _inherits(Sources, _Component);
+	var Article = function (_React$Component) {
+	  _inherits(Article, _React$Component);
 	
-	  function Sources(props) {
-	    _classCallCheck(this, Sources);
+	  function Article() {
+	    _classCallCheck(this, Article);
 	
-	    var _this = _possibleConstructorReturn(this, (Sources.__proto__ || Object.getPrototypeOf(Sources)).call(this, props));
-	
-	    _this.listItems = props.items.map(function (item) {
-	      return _react2.default.createElement(
-	        'option',
-	        { key: item.toString() },
-	        item
-	      );
-	    });
-	    _this.state = { date: new Date() };
-	    return _this;
+	    return _possibleConstructorReturn(this, (Article.__proto__ || Object.getPrototypeOf(Article)).apply(this, arguments));
 	  }
 	
-	  _createClass(Sources, [{
-	    key: 'render',
+	  _createClass(Article, [{
+	    key: "render",
 	    value: function render() {
 	      return _react2.default.createElement(
-	        'div',
+	        "li",
 	        null,
-	        _react2.default.createElement(
-	          'select',
-	          { id: 'sources' },
-	          this.listItems
-	        ),
-	        _react2.default.createElement(
-	          'button',
-	          { id: 'magic_button' },
-	          'Show selected news.'
-	        )
+	        props.value
 	      );
 	    }
 	  }]);
 	
-	  return Sources;
-	}(_react.Component);
+	  return Article;
+	}(_react2.default.Component);
 	
-	exports.default = Sources;
-
-/***/ },
-/* 181 */,
-/* 182 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
+	var ArticleList = function (_Component) {
+	  _inherits(ArticleList, _Component);
 	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
+	  function ArticleList(props) {
+	    _classCallCheck(this, ArticleList);
 	
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	    return _possibleConstructorReturn(this, (ArticleList.__proto__ || Object.getPrototypeOf(ArticleList)).call(this, props));
 	
-	var _react = __webpack_require__(1);
-	
-	var _react2 = _interopRequireDefault(_react);
-	
-	var _reactDom = __webpack_require__(32);
-	
-	var _reactDom2 = _interopRequireDefault(_reactDom);
-	
-	var _Sources = __webpack_require__(180);
-	
-	var _Sources2 = _interopRequireDefault(_Sources);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-	
-	var API_URL = 'https://newsapi.org/v1/sources?apiKey=d1450e81d3cb4c4ba3f2f5c772206b14';
-	
-	var SourcesHelper = function () {
-	  function SourcesHelper() {
-	    _classCallCheck(this, SourcesHelper);
+	    // this.articles = props.articles.map((article) =>
+	    //   // Correct! Key should be specified inside the array.
+	    //   <Article key={article.toString()} value={article}>
+	    //   </Article>
+	    // <h1 class="title">${article.title}</h1>
+	    //        <img src="${article.urlToImage}"></img>
+	    //        <p class="description">${article.description}</p>
+	    //        <p class="link_to_article"><a href="${article.url}">Read full article</a></p>
+	    //        <p class="author">By ${article.author} on (${new Date(article.publishedAt).toLocaleString()})</p>
+	    // );
 	  }
 	
-	  _createClass(SourcesHelper, [{
-	    key: 'load',
-	    value: function load() {
-	      fetch(API_URL).then(function (result) {
-	        if (result.ok) {
-	          return result.json();
-	        }
-	      }).then(function (data) {
-	        _reactDom2.default.render(_react2.default.createElement(_Sources2.default, { items: items }), document.getElementById('feed'));
-	      }).catch(function () {});
+	  _createClass(ArticleList, [{
+	    key: "componentWillReceiveProps",
+	    value: function componentWillReceiveProps(nextProps) {
+	      debugger;
+	    }
+	  }, {
+	    key: "render",
+	    value: function render() {
+	      var listItems = this.props.articles.map(function (item) {
+	        return _react2.default.createElement(
+	          "div",
+	          { key: item.title },
+	          _react2.default.createElement(
+	            "h1",
+	            { "class": "title" },
+	            item.title
+	          ),
+	          _react2.default.createElement("img", { src: item.urlToImage }),
+	          _react2.default.createElement(
+	            "p",
+	            { "class": "description" },
+	            item.description
+	          ),
+	          _react2.default.createElement(
+	            "p",
+	            { "class": "link_to_article" },
+	            _react2.default.createElement(
+	              "a",
+	              { href: item.url },
+	              "Read full article"
+	            )
+	          ),
+	          _react2.default.createElement(
+	            "p",
+	            { "class": "author" },
+	            "By ",
+	            item.author,
+	            " on ",
+	            new Date(item.publishedAt).toLocaleString()
+	          )
+	        );
+	      });
+	
+	      return _react2.default.createElement(
+	        "div",
+	        null,
+	        listItems
+	      );
 	    }
 	  }]);
 	
-	  return SourcesHelper;
-	}();
+	  return ArticleList;
+	}(_react.Component);
 	
-	exports.default = SourcesHelper;
+	exports.default = ArticleList;
 
 /***/ }
 /******/ ]);
