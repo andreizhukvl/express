@@ -1,0 +1,14 @@
+<form novalidate name="sumbitForm" enter-key="$ctrl.onSubmit()">
+  <fieldset>
+    <legend>Article form</legend>
+    Title:
+    <input type="text" name="title" ng-required="true" ng-model="$ctrl.article.title">
+    <span ng-if="submitForm.title.$invalid">*REQUIRED</span>
+    <br>Description:
+    <input type="text" name="description" ng-required="true" ng-model="$ctrl.article.description">
+    <span ng-if="submitForm.description.$invalid">*REQUIRED</span>
+    <br>Photo:
+    <img ng-src="{{$ctrl.article.image != null && $ctrl.article.image || 'images/' + $ctrl.article.image_path}}"></img>
+    <input type="submit" ng-click="$ctrl.onSubmit()">
+  </fieldset>
+</form>

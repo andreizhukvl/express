@@ -1,6 +1,6 @@
 angular.module('articlesApp')
 .component('articleList', {
-    templateUrl: '/scripts/directives/articleList.html',
+    templateUrl: '/scripts/components/articleList.html',
     controller: articleListController,
 });
 
@@ -10,7 +10,6 @@ function articleListController(articlesSvc) {
     vm.$onInit = function() {
 
         articlesSvc.getArticles().then(function(response) {
-            console.log(response);
             vm.articles = response.data;
         });
     };

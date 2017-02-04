@@ -39,6 +39,16 @@ router.get('/', function(req, res, next) {
   });
 });
 
+router.get('/article', function(req, res, next) {
+  var db = mongoose.connect('mongodb://admin:admin@ds033066.mlab.com:33066/blog');
+
+  Article.find({ _id: req.query._id }, function(err, docs) {
+    //res.render('articles', { data: docs });
+    res.json(docs[0]);
+    db.disconnect();
+  });
+});
+
 router.get('/add', function(req, res, next) {
   res.render('add-article');
 });
@@ -51,7 +61,7 @@ router.post('/add', upload.single('displayImage'), function(req, res, next) {
       title : req.body.title,
       body : req.body.text,
       description : req.body.description,
-      image_path : req.file.filename
+      image_path : req.file != null ? "images/" + req.file.filename : null
     }
   );
   article.save(function (err) {
@@ -59,10 +69,37 @@ router.post('/add', upload.single('displayImage'), function(req, res, next) {
       console.log(err);
     } else {
       console.log('saved');
-      res.redirect('/articles');
+      res.json({success: true});
     }
 
     db.disconnect();
+  });
+});
+
+router.post('/edit', upload.single('displayImage'), function(req, res, next) {
+  var db = mongoose.connect('mongodb://admin:admin@ds033066.mlab.com:33066/blog');
+
+  Article.findById(req.body._id, function(err, article) {
+    if (!article) {
+      return new Error("Article wasn't found");
+    }
+    else {
+      article.title = req.body.title;
+      article.body = req.body.text;
+      article.description = req.body.description;
+
+      article.save(function (err) {
+        if (err) {
+          console.log(err);
+          res.json({success: false});
+        } else {
+          console.log('saved');
+          res.json({success: true});
+        }
+
+        db.disconnect();
+      });
+    }
   });
 });
 

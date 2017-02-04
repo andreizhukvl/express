@@ -1,4 +1,4 @@
-angular.module('articlesApp', [
+var articlesApp = angular.module('articlesApp', [
   'ngRoute'
 ]).config(['$locationProvider', '$routeProvider',
     function config($locationProvider, $routeProvider) {
@@ -8,8 +8,11 @@ angular.module('articlesApp', [
         when('/articles', {
           template: '<article-list></article-list>'
         }).
+        when('/articles/add', {
+          template: '<article></article>'
+        }).
         when('/articles/:articleId', {
-          template: '<article-details></article-details>'
+          template: '<article></article>'
         }).
         otherwise('/articles');
 }]);

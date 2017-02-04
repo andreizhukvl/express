@@ -1,0 +1,6 @@
+<div>
+    <h1 class="title">{{$ctrl.articleItem.title}}</h1>
+    <img ng-src="{{'images/' + $ctrl.articleItem.image_path}}" alt="{{$ctrl.articleItem.title}}"></img>
+    <p class="description">{{$ctrl.articleItem.description | postTextFilter}}</p>
+    <a href="" ng-click="$ctrl.onEdit()">Edit article</a>      
+</div>

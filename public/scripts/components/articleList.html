@@ -1,0 +1,4 @@
+<input type="submit" value="Add article" ng-controller="addArticleCtrl as addCtrl" ng-click="addCtrl.onAdd()">
+<div ng-repeat="article in $ctrl.articles">
+    <article-details article-item='article'></article-details>
+</div>

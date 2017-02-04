@@ -6,4 +6,8 @@ router.get('/', function(req, res, next) {
   res.render('index');
 });
 
+router.get('/app', function(req, res, next) {
+  res.sendfile('./public/articles.html');
+});
+
 module.exports = router;

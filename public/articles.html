@@ -5,19 +5,19 @@
     <title>My HTML File</title>
     <script src="scripts/angular/angular.js"></script>
     <script src="scripts/angular/angular-route.js"></script>
+    <script src="scripts/angular/ng-file-upload.js"></script>
     <script src="scripts/app.js"></script>
-    <script src="scripts/directives/articleList.js"></script>
-    <script src="scripts/directives/articleDetails.js"></script>
+    <script src="scripts/components/article.js"></script>
+    <script src="scripts/components/articleList.js"></script>
+    <script src="scripts/components/articleDetails.js"></script>
     <script src="scripts/services/articlesSvc.js"></script>
-    <script src="scripts/controllers/submitArticleCtrl.js"></script>
+    <script src="scripts/controllers/addArticleCtrl.js"></script>
     <script src="scripts/filters/postTextFilter.js"></script>
     <script src="scripts/config/appConfig.js"></script>
     <script src="scripts/directives/enterKey.js"></script>
+    <link rel="stylesheet" href="../stylesheets/style.css">
   </head>
   <body ng-app='articlesApp'>
-
     <div ng-view></div>
-    <p>Nothing here {{'yet' + '!'}}</p>
-
   </body>
 </html>
