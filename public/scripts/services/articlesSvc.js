@@ -6,20 +6,20 @@ angular.module('articlesApp')
         addArticle: addArticle,
         editArticle: editArticle
     };
-
+    
     function getArticles() {
-        return $http.get(appConfig.apiUrl + "articles");
+        return $http.get(appConfig.articlesUrl);
     }
 
     function getArticle(articleId) {
-        return $http.get(appConfig.apiUrl + "articles/article?_id=" + articleId);
+        return $http.get(appConfig.getArticleUrl + articleId);
     }
 
     function addArticle(article) {
-        return $http.post(appConfig.apiUrl + "articles/add", article);
+        return $http.post(appConfig.addArticleUrl, article);
     }
 
     function editArticle(article) {
-        return $http.post(appConfig.apiUrl + "articles/edit", article);
+        return $http.post(appConfig.editArticleUrl, article);
     }
 }])

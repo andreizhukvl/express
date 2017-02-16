@@ -10,9 +10,11 @@ function articleController($location, $routeParams, articlesSvc) {
 
     vm.picFile = null;
     vm.$onInit = function() {
-        articlesSvc.getArticle($routeParams.articleId).then(function(response) {
-            vm.article = response.data;
-        });
+        if($routeParams.articleId) {
+            articlesSvc.getArticle($routeParams.articleId).then(function(response) {
+                vm.article = response.data;
+            });
+        }
     };
 
     vm.onSubmit = function() {
